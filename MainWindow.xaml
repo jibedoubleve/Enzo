@@ -1,65 +1,20 @@
-﻿<Window
-    x:Class="enzo.MainWindow"
+﻿<mah:MetroWindow
+    x:Class="Enzo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ctrl="clr-namespace:Enzo.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:enzo"
+    xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     Title="MainWindow"
-    Width="400"
+    IgnoreTaskbarOnMaximize="True"
+    Loaded="OnMetroWindowLoaded"
+    UseNoneWindowStyle="True"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Maximized"
     mc:Ignorable="d">
-    <Window.Resources>
-        <sys:Double x:Key="DefaultFontSize">20</sys:Double>
-        <Style TargetType="TextBox">
-            <Setter Property="Margin" Value="5" />
-            <Setter Property="Width" Value="40" />
-            <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
-        </Style>
-        <Style TargetType="TextBlock">
-            <Setter Property="Margin" Value="5" />
-            <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
-        </Style>
-
-        <Style TargetType="Button">
-            <Setter Property="Margin" Value="5" />
-        </Style>
-
-        <Style x:Key="ElipseStyle" TargetType="Ellipse">
-            <Setter Property="Canvas.Left" Value="135" />
-            <Setter Property="Canvas.Top" Value="25" />
-            <Setter Property="Width" Value="25" />
-            <Setter Property="Height" Value="25" />
-            <Setter Property="Margin" Value="5" />
-            <Setter Property="Fill" Value="Crimson" />
-        </Style>
-    </Window.Resources>
-    <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock x:Name="calculus_1" Text="2 + 3" />
-            <TextBox x:Name="result_1" Width="40" />
-            <Ellipse x:Name="validation_1" Style="{StaticResource ElipseStyle}" />
-        </StackPanel>
-
-
-        <StackPanel Orientation="Horizontal">
-            <TextBlock x:Name="calculus_2" Text="4 + 3" />
-            <TextBox x:Name="result_2" Width="40" />
-            <Ellipse x:Name="validation_2" Style="{StaticResource ElipseStyle}" />
-        </StackPanel>
-
-
-        <StackPanel Orientation="Horizontal">
-            <TextBlock x:Name="calculus_3" Text="4 + 7" />
-            <TextBox x:Name="result_3" Width="40" />
-            <Ellipse x:Name="validation_3" Style="{StaticResource ElipseStyle}" />
-        </StackPanel>
-        <Button Click="OnResult" Content="Je valide" />
-
-        <Image
-            x:Name="photo"
-            Height="400"
-            Source="/photo/result.jpg"
-            Visibility="Collapsed" />
-    </StackPanel>
-</Window>
+    <Frame
+        x:Name="_navigationHost"
+        Loaded="OnLoaded"
+        NavigationUIVisibility="Hidden" />
+</mah:MetroWindow>

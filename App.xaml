@@ -1,8 +1,88 @@
 ﻿<Application
-    x:Class="enzo.App"
+    x:Class="Enzo.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:enzo"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:local="clr-namespace:Enzo"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     StartupUri="MainWindow.xaml">
-    <Application.Resources />
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--  MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive!  -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <!--  Theme setting  -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+                <ResourceDictionary>
+                    <sys:Double x:Key="DefaultFontSize">20</sys:Double>
+                    <sys:Double x:Key="BigFontSize">40</sys:Double>
+                    <sys:Double x:Key="DefaultPhotoHeight">650</sys:Double>
+
+                    <Style
+                        x:Key="ValidationButtonStyle"
+                        BasedOn="{StaticResource MahApps.Styles.Button.Circle}"
+                        TargetType="Button">
+                        <Setter Property="Height" Value="90" />
+                        <Setter Property="Width" Value="90" />
+                        <Setter Property="Background" Value="Green" />
+                        <Setter Property="Content">
+                            <Setter.Value>
+                                <iconPacks:PackIconSimpleIcons
+                                    Width="60"
+                                    Height="60"
+                                    Background="Transparent"
+                                    Foreground="White"
+                                    Kind="Go" />
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style
+                        x:Key="LeftButtonStyle"
+                        BasedOn="{StaticResource ValidationButtonStyle}"
+                        TargetType="Button">
+                        <Setter Property="Margin" Value="10" />
+                        <Setter Property="Height" Value="50" />
+                        <Setter Property="Width" Value="50" />
+                        <Setter Property="Background" Value="Gray" />
+                        <Setter Property="Content">
+                            <Setter.Value>
+                                <iconPacks:PackIconFontAwesome
+                                    Width="20"
+                                    Height="20"
+                                    Background="Transparent"
+                                    Foreground="White"
+                                    Kind="AngleLeftSolid" />
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style
+                        x:Key="RightButtonStyle"
+                        BasedOn="{StaticResource LeftButtonStyle}"
+                        TargetType="Button">
+                        <Setter Property="Content">
+                            <Setter.Value>
+                                <iconPacks:PackIconFontAwesome
+                                    Width="20"
+                                    Height="20"
+                                    Background="Transparent"
+                                    Foreground="White"
+                                    Kind="AngleRightSolid" />
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="QuestionTextboxStyle" TargetType="TextBlock">
+                        <Setter Property="Margin" Value="5" />
+                        <Setter Property="HorizontalAlignment" Value="Center" />
+                        <Setter Property="FontFamily" Value="Comic" />
+                        <Setter Property="FontSize" Value="17" />
+                    </Style>
+
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

@@ -1,6 +1,6 @@
 ﻿using CodingSeb.ExpressionEvaluator;
 
-namespace enzo.Business
+namespace Enzo.Business
 {
     public static class Evaluator
     {

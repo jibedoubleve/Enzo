@@ -1,0 +1,45 @@
+﻿<UserControl
+    x:Class="Enzo.Controls.Victory"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:local="clr-namespace:Enzo.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock
+            HorizontalAlignment="Center"
+            FontSize="40"
+            Text="Bravo Enzo!" />
+        <TextBlock
+            HorizontalAlignment="Center"
+            FontSize="{StaticResource DefaultFontSize}"
+            Text="Tu as réussi à percer le mystère de ce programme!" />
+        <TextBlock
+            HorizontalAlignment="Center"
+            FontSize="{StaticResource DefaultFontSize}"
+            Text="Voici ta récompense" />
+        <Button
+            x:Name="_showButton"
+            Margin="0,20,0,0"
+            Click="OnShow"
+            Style="{StaticResource ValidationButtonStyle}">
+            <iconPacks:PackIconEntypo
+                Width="65"
+                Height="65"
+                Kind="Eye" />
+        </Button>
+        <Image
+            x:Name="_image"
+            Height="400"
+            Margin="0,20,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Source="/photo/victory.jpg"
+            Visibility="Collapsed" />
+
+    </StackPanel>
+</UserControl>

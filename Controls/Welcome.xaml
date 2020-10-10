@@ -1,0 +1,134 @@
+﻿<UserControl
+    x:Class="Enzo.Controls.Welcome"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:local="clr-namespace:Enzo.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock
+            Margin="0,0,0,30"
+            HorizontalAlignment="Center"
+            FontSize="60"
+            Text="Bonjour Enzo" />
+        <TextBlock
+            Margin="0,0,0,30"
+            HorizontalAlignment="Center"
+            FontSize="{StaticResource DefaultFontSize}"
+            Text="Est-ce bien toi? " />
+        <TextBlock
+            Margin="0,0,0,30"
+            HorizontalAlignment="Center"
+            FontSize="{StaticResource DefaultFontSize}"
+            Text="Pour être sûr, dis moi ton age" />
+
+        <TextBox
+            x:Name="_age"
+            Width="200"
+            Margin="20,40,20,20"
+            FontSize="{StaticResource DefaultFontSize}" />
+        <Grid Width="250">
+            <Grid.Resources>
+                <Style BasedOn="{StaticResource MahApps.Styles.Button.Circle}" TargetType="Button">
+                    <Setter Property="Height" Value="80" />
+                    <Setter Property="Width" Value="80" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--  LINE 1  -->
+            <Button Click="OnSendKey" Tag="1">
+                <iconPacks:PackIconMaterial Kind="Numeric1" />
+            </Button>
+            <Button
+                Grid.Column="1"
+                Click="OnSendKey"
+                Tag="2">
+                <iconPacks:PackIconMaterial Kind="Numeric2" />
+            </Button>
+            <Button
+                Grid.Column="2"
+                Click="OnSendKey"
+                Tag="3">
+                <iconPacks:PackIconMaterial Kind="Numeric3" />
+                <!--  LINE 2  -->
+            </Button>
+            <Button
+                Grid.Row="1"
+                Click="OnSendKey"
+                Tag="4">
+                <iconPacks:PackIconMaterial Kind="Numeric4" />
+            </Button>
+            <Button
+                Grid.Row="1"
+                Grid.Column="1"
+                Click="OnSendKey"
+                Tag="5">
+                <iconPacks:PackIconMaterial Kind="Numeric5" />
+            </Button>
+            <Button
+                Grid.Row="1"
+                Grid.Column="2"
+                Click="OnSendKey"
+                Tag="6">
+                <iconPacks:PackIconMaterial Kind="Numeric6" />
+                <!--  LINE 3  -->
+            </Button>
+            <Button
+                Grid.Row="2"
+                Click="OnSendKey"
+                Tag="7">
+                <iconPacks:PackIconMaterial Kind="Numeric7" />
+            </Button>
+            <Button
+                Grid.Row="2"
+                Grid.Column="1"
+                Click="OnSendKey"
+                Tag="8">
+                <iconPacks:PackIconMaterial Kind="Numeric8" />
+            </Button>
+            <Button
+                Grid.Row="2"
+                Grid.Column="2"
+                Click="OnSendKey"
+                Tag="9">
+                <iconPacks:PackIconMaterial Kind="Numeric9" />
+            </Button>
+            <!--  LINE 4  -->
+            <Button
+                Grid.Row="3"
+                Click="OnSendKey"
+                Tag="clear">
+                <iconPacks:PackIconFeatherIcons Kind="XCircle" />
+            </Button>
+            <Button
+                Grid.Row="3"
+                Grid.Column="1"
+                Click="OnSendKey"
+                Tag="0">
+                <iconPacks:PackIconMaterial Kind="Numeric0" />
+            </Button>
+            <Button
+                Grid.Row="3"
+                Grid.Column="2"
+                Width="80"
+                Height="80"
+                Click="OnSendKey"
+                Style="{StaticResource ValidationButtonStyle}"
+                Tag="send" />
+        </Grid>
+    </StackPanel>
+</UserControl>

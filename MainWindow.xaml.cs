@@ -1,13 +1,13 @@
-﻿using enzo.Business;
+﻿using Enzo.Business;
+using Enzo.Controls;
 using System.Windows;
-using System.Windows.Media;
 
-namespace enzo
+namespace Enzo
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : INavigator
     {
         #region Constructors
 
@@ -20,19 +20,31 @@ namespace enzo
 
         #region Methods
 
-        private void OnResult(object sender, RoutedEventArgs e)
+        private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            var t1 = Evaluator.Evaluate(calculus_1.Text, result_1.Text);
-            var t2 = Evaluator.Evaluate(calculus_2.Text, result_2.Text);
-            var t3 = Evaluator.Evaluate(calculus_3.Text, result_3.Text);
+            Goto(new Welcome(this));
+        }
 
-            validation_1.Fill = t1 ? Brushes.Green : Brushes.Red;
-            validation_2.Fill = t2 ? Brushes.Green : Brushes.Red;
-            validation_3.Fill = t3 ? Brushes.Green : Brushes.Red;
+        private void OnMetroWindowLoaded(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Maximized;
+            ResizeMode = ResizeMode.NoResize;
+            ShowMaxRestoreButton = false;
+            ShowMinButton = false;
+        }
 
-            photo.Visibility = (t1 && t2 && t3)
-                    ? Visibility.Visible
-                    : Visibility.Collapsed;
+        public void GoBack()
+        {
+            if (_navigationHost.CanGoBack)
+            {
+                _navigationHost.GoBack();
+            }
+            else { _navigationHost.Navigate(new Welcome(this)); }
+        }
+
+        public void Goto(object destination)
+        {
+            _navigationHost.Navigate(destination);
         }
 
         #endregion Methods

@@ -4,20 +4,59 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>enzo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="photo\charlie.png" />
+    <None Remove="photo\harry_potter.jpg" />
+    <None Remove="photo\maitre_gims.jpg" />
+    <None Remove="photo\minecraft-villageois.png" />
+    <None Remove="photo\places\place_bathroom.jpeg" />
+    <None Remove="photo\places\place_flower.jpeg" />
+    <None Remove="photo\places\place_lego.jpeg" />
+    <None Remove="photo\places\place_letterbox.jpeg" />
+    <None Remove="photo\places\place_oven.jpeg" />
+    <None Remove="photo\places\place_washingmachine.jpeg" />
+    <None Remove="photo\pyjamasque.jpg" />
     <None Remove="photo\result.jpg" />
+    <None Remove="photo\t-rex.jpg" />
+    <None Remove="photo\victory.jpg" />
+    <None Remove="photo\VisualQuestions\Screw\hammer.jpg" />
+    <None Remove="photo\VisualQuestions\Screw\Music.jpg" />
+    <None Remove="photo\VisualQuestions\Screw\Screw.jpg" />
+    <None Remove="photo\VisualQuestions\Screw\Screwdriver.jpg" />
+    <None Remove="photo\where_is_charlie.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CodingSeb.ExpressionEvaluator" Version="1.4.16" />
+    <PackageReference Include="MahApps.Metro" Version="2.2.0" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.5.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="photo\charlie.png" />
+    <Resource Include="photo\harry_potter.jpg" />
+    <Resource Include="photo\maitre_gims.jpg" />
+    <Resource Include="photo\minecraft-villageois.png" />
+    <Resource Include="photo\places\place_bathroom.jpeg" />
+    <Resource Include="photo\places\place_flower.jpeg" />
+    <Resource Include="photo\places\place_lego.jpeg" />
+    <Resource Include="photo\places\place_letterbox.jpeg" />
+    <Resource Include="photo\places\place_oven.jpeg" />
+    <Resource Include="photo\places\place_washingmachine.jpeg" />
+    <Resource Include="photo\pyjamasque.jpg" />
     <Resource Include="photo\result.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="photo\t-rex.jpg" />
+    <Resource Include="photo\victory.jpg" />
+    <Resource Include="photo\VisualQuestions\Screw\hammer.jpg" />
+    <Resource Include="photo\VisualQuestions\Screw\Music.jpg" />
+    <Resource Include="photo\VisualQuestions\Screw\Screw.jpg" />
+    <Resource Include="photo\VisualQuestions\Screw\Screwdriver.jpg" />
+    <Resource Include="photo\where_is_charlie.jpg" />
   </ItemGroup>
 
 </Project>
